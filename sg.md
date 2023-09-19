@@ -11,14 +11,10 @@ IpProtocol=tcp,FromPort=22,ToPort=22,IpRanges='[{CidrIp=203.0.113.25/32,Descript
 # To delete security group 
 aws ec2 delete-security-group --group-id sg-0db93639ae87aa4da
 
-To delete multiple security group 
+# To delete multiple security group 
 
 #!/bin/bash
-
-## List of security group IDs or names to delete
 security_groups=("sg-04cef8a2f92493d8a" "sg-0b767f673337532c6")
-
-## Iterate through the list and delete each security group
 for sg in "${security_groups[@]}"; do
     aws ec2 delete-security-group --group-id "$sg" || echo "Failed to delete security group: $sg"
 done
