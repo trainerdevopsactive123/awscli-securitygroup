@@ -15,10 +15,10 @@ To delete multiple security group
 
 #!/bin/bash
 
-# List of security group IDs or names to delete
+## List of security group IDs or names to delete
 security_groups=("sg-04cef8a2f92493d8a" "sg-0b767f673337532c6")
 
-# Iterate through the list and delete each security group
+## Iterate through the list and delete each security group
 for sg in "${security_groups[@]}"; do
     aws ec2 delete-security-group --group-id "$sg" || echo "Failed to delete security group: $sg"
 done
