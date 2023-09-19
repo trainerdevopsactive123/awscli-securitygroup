@@ -34,7 +34,14 @@ aws ec2 describe-security-groups
 aws ec2 describe-security-groups --query 'SecurityGroups[*].[GroupId, GroupName]' --output text
 
 
+# attach with EC2 machine
 
+aws ec2 modify-instance-attribute --instance-id i-0972b665eaf3664dc --groups sg-0098ea776ec399ba1	
+
+
+# attach multiple security group with ec2 machine
+
+aws ec2 modify-instance-attribute --instance-id i-0972b665eaf3664dc --groups sg-0098ea776ec399ba1 sg-0ef0d036201e5ad20
 
 
 
